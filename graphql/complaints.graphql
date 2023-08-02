@@ -1,0 +1,39 @@
+query userComplaints {
+  userComplaintsAll {
+    complaint
+    status
+    date
+  }
+}
+
+query allComplaints {
+  complaintsAll {
+    id
+    student {
+      id
+      studentName
+      enrollmentNo
+    }
+    complaint
+    date
+    status
+  }
+}
+
+mutation createComplaint($complaint: String!) {
+  createComplaint(complaint: $complaint) {
+    complaint {
+      id
+      status
+      complaint
+    }
+  }
+}
+
+mutation updateComplaint($id: Int!, $status: String!) {
+  updateComplaint(id: $id, status: $status) {
+    complaint {
+      id
+    }
+  }
+}

@@ -1,0 +1,13 @@
+query allPosts {
+  allPosts {
+    id
+    title
+    tags
+    content
+    createdAt
+    student {
+      studentName
+      enrollmentNo
+    }
+  }
+}

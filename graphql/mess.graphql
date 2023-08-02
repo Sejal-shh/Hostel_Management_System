@@ -1,0 +1,21 @@
+mutation createMessNotEating {
+  createMessNotEating {
+    messNotEating {
+      id
+      student {
+        studentName
+      }
+      date
+    }
+  }
+}
+
+query messNotEatingToday {
+  messNotEatingToday {
+    id
+    student {
+      studentName
+    }
+    date
+  }
+}

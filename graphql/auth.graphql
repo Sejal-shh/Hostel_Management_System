@@ -1,0 +1,32 @@
+mutation login($username: String, $password: String!) {
+  tokenAuth(username: $username, password: $password) {
+    token
+    success
+    user {
+      id
+      username
+    }
+  }
+}
+
+mutation register($email: String!, $username: String!, $password: String!) {
+  register(email: $email, username: $username, password1: $password, password2: $password) {
+    success
+    token
+  }
+}
+
+mutation verifyTok($token: String!) {
+  verifyAccount(token: $token) {
+    success
+    errors
+  }
+}
+
+query user {
+  me {
+    id
+    username
+    isStudent
+  }
+}
